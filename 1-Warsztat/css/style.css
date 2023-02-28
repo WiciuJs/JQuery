@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: rgb(231, 230, 229);
+    font-family: 'Poppins';
+    font-weight: bold;
+
+}
+
+.accordion {
+    background-color: black;
+    max-width: 500px;
+    margin: 50px auto;
+    border-top: 15px solid red;
+    border-radius: 15px;
+    display: block;
+    backdrop-filter: blur(8px);
+    justify-content: center;
+
+}
+
+.accordion-item {
+    border-bottom: 1px solid white;
+    padding: 15px 15px 15px 40px;
+    cursor: pointer;
+    align-items: center;
+    color: white;
+}
+
+
+.accordion-title {
+    color: white;
+    font-size: 17px;
+    position: relative;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparents, #0008);
+    line-height: 0.7px;
+    outline: none;
+    animation: animate 5s linear infinite;
+
+}
+
+@keyframes animate {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    80%,
+    92% {
+        color: white;
+        text-shadow: none;
+    }
+
+    18.1%,
+    21%,
+    55%,
+    61%,
+    81%,
+    100% {
+        color: #03bcf4;
+        text-shadow: 0 0 10px #03bcf4,
+            0 0 20px #03bcf4 0 0 40px #03bcf4 0 0 80px #03bcf4 0 0 160px #03bcf4;
+    }
+}
+
+
+.accordion-title::before {
+    content: "+";
+    font-size: 20px;
+    position: absolute;
+    left: -16px;
+    top: -4px;
+    color: red;
+    animation: animate 7s linear infinite;
+}
+
+.open .accordion-title::before {
+    content: "-";
+    color: yellow;
+    animation: animate 8s linear infinite;
+}
+
+.accordion-content {
+    display: none;
+}
